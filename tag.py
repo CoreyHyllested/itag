@@ -37,16 +37,30 @@ def email(srv, usr, tagged):
 
 @app.errorhandler(404)
 def pageNotFound(error):
-    return "Four-Oh-Four.\n<p>Sadly, this page does not exist</p>", 404
+    return "Four-Oh-Four.\n<p>This page no exist.</p>", 404
 
 
 @app.route('/')
 def index():
 	taggedName = request.args.get("name", "default_name")
-	#updateTagged(tagged)
+	taggedDays = "unknown";
 	#resp = Flask.make_response(flask.Flask.render_template('index.html', title=" ", name=tagged))
     #resp.set_cookie('uid', uid);	
-	resp = flask.make_response(flask.render_template('index.html', title='I School Tag', name=taggedName))
-	return resp; #"Hello World, bitches! " + taggedName;
+	resp = flask.make_response(flask.render_template('index.html', tagged=taggedName, days=taggedDays))
+	return resp; 
+
+
+@app.route('/players')
+def renderPlayerPage():
+	return "Players"
+
+@app.route('/awards')
+def renderAwardPage():
+	return "really, you want awards?"
+
+@app.route('/update')
+def renderUpdatePage():
+	#updateTagged(tagged)
+	return "Update herreee.."
 
 

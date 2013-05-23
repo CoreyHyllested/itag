@@ -2,12 +2,43 @@
 <html lang="en-us">
 	<head>
 		<meta charset="utf-8">
-		<title>{{ title }}</title>
-		<link rel="stylesheet" href="static/css/default.css">
+		<title>UC Berkeley iTag, Inc</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Corey Hyllested">
+		<link rel="stylesheet" href="static/css/bootstrap.css">
+		
 	</head>
-	<body>
-		<div class="container">
-			Hello {{ name }}
-		</div>
+
+	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<!-- URI=referer is some neat trick that passes in my own URI -->
+					<a class="brand" href="http://validator.w3.org/check?uri=referer">{{ tagged }}</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+								<!-- changes color when class is set to active -->
+								<li class="active"><a href="./index.html">Home</a></li>
+								<li class="">	   <a href="players">Players</a></li>
+								<li class="">      <a href="awards">Awards</a></li>
+								<li class="">      <a href="update">Update</a></li>
+						</ul>
+					</div >  <!--nav-collapse -->
+				</div>		<!--container-->
+			</div>			<!--navbar-inner-->
+		</div>				<!--navbar-->
+
+
+
+
+
 	</body>
 </html>
